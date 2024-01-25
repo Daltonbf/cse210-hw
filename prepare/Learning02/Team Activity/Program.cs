@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+
 class JournalProgram
 {
     static void Main()
