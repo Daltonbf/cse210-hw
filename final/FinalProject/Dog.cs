@@ -1,16 +1,17 @@
 using System;
 public class Dog : Pet
 {
-    public Dog(string name, int age) : base(name, age)
-    {
-    }
-
+    public Dog(string name, int age) : base(name, age) { }
     public override void Feed()
     {
-        Console.WriteLine($"{Name} the dog is eating bones.");
+        Console.WriteLine($"{name} the dog is eating bones.");
+        hungerLevel -= 15;
+        if (hungerLevel < 0) hungerLevel = 0;
     }
     public override void Play()
     {
-        Console.WriteLine($"{Name} the dog is fetching a ball.");
+        Console.WriteLine($"{name} the dog is fetching a ball.");
+        happinessLevel += 15;
+        if (happinessLevel > 100) happinessLevel = 100;
     }
 }

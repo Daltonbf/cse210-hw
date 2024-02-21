@@ -1,17 +1,24 @@
 using System;
+using System.Collections.Generic;
 class Program
 {
     static void Main(string[] args)
     {
-        Cat cat = new Cat("Whiskers", 3);
-        Dog dog = new Dog("Buddy", 5);
-        cat.Feed();
-        cat.Play();
-        cat.CheckHealth();
-        dog.Feed();
-        dog.Play();
-        dog.CheckHealth();
+        List<Pet> pets = new List<Pet>();
+        pets.Add(new Cat("Whiskers", 3));
+        pets.Add(new Dog("Buddy", 5));
+        pets.Add(new Bird("Polly", 2));
+        foreach (var pet in pets)
+        {
+            Console.WriteLine($"Feeding {pet.GetName()}...");
+            pet.Feed();
+            Console.WriteLine();
+            Console.WriteLine($"Playing with {pet.GetName()}...");
+            pet.Play();
+            Console.WriteLine();
+            Console.WriteLine($"Checking {pet.GetName()}'s health...");
+            pet.CheckHealth();
+            Console.WriteLine();
+        }
     }
 }
-//I started by getting the basics for both a dog and a cat pet in this final project. I will have to continue to add more classes of animals and follow suit with their subclasses of being fed and playingwith them.
-//This start has me excited to see where I can take this to. I hope I can solve issues I ay most likely run into along the way with how I can track all of this information and keep progress for what the user does.
